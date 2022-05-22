@@ -1,0 +1,101 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+* {
+    margin: 0;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.monospace {
+    font-family: 'Roboto Mono', monospace;
+}
+
+@layer base {
+    h2 {
+        @apply text-xl my-2
+    }
+
+    .disabled {
+        @apply text-gray-400 shadow-none pointer-events-none !important;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply shadow-md active:shadow p-3 duration-150 m-1 md:m-2 rounded border bg-white
+    }
+
+    .menubar-btn {
+        @apply duration-150 px-3 h-full
+    }
+
+    .workbgm-action-bgm {
+        @apply shadow-md active:shadow px-3 py-1 duration-150 rounded border text-sm my-1 mb-2
+    }
+
+    .workbgm-list {
+        @apply my-2 border rounded md:items-center flex flex-col sm:flex-row
+    }
+
+    input {
+        @apply border-b m-1 p-2 flex-grow border-gray-300 hover:border-gray-500 duration-150 focus:border-blue-500 focus:border-b-2 focus:duration-0 outline-none
+    }
+
+    .icon-btn {
+        @apply shadow-md active:shadow p-2 px-3 duration-150 m-1 rounded placeholder-gray-300
+    }
+}
+
+.element-display {
+    display: none;
+}
+.element-display.is-show {
+    display: block;
+}
+
+/* animation */
+.animation-opacity {
+    transition-property: opacity, visibility;
+    transition-duration: .150s;
+    transition-timing-function: ease-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.animation-opacity.is-show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.bg-transparent {
+    background-color: #ffffffe8;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.blur {
+    backdrop-filter: blur(5px);
+}
+
+a {
+    color: #1a0dab;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
